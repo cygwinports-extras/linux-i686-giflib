@@ -1,0 +1,20 @@
+CROSS_HOST="i686-pc-linux-gnu"
+inherit cross
+
+NAME="linux-i686-giflib"
+VERSION=4.1.6
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="GIF manipulation library for Win32 toolchain"
+DESCRIPTION="This package does NOT contain cygwin binaries.
+Instead, it contains Linux ELF binaries.  It is for use with the
+linux-i686-gcc cross compiler, and installs into the
+/usr/i686-pc-linux-gnu/sys-root/usr/{lib,include} directories."
+HOMEPAGE="http://sourceforge.net/projects/giflib/"
+SRC_URI="mirror://sourceforge/giflib/giflib-${VERSION}.tar.bz2"
+SRC_DIR="giflib-${VERSION}"
+
+CYGCONF_ARGS="--disable-gl --disable-rle --disable-x11"
+MAKEOPTS+=" bin_PROGRAMS=  bin_SCRIPTS= "
+
+KEEP_LA_FILES="none"
